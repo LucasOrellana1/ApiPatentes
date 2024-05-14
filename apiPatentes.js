@@ -1,8 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const { buscarPatente } = require('./patenteBusqueda');
 
-
+app.use(cors());
 
 app.get('/:patente', async (req, res) => {
     const patente = req.params.patente;
@@ -15,6 +16,7 @@ app.get('/:patente', async (req, res) => {
     
     } catch (error) {
         res.status(500).json({ error: 'Error al buscar la patente' });
+        console.log(error);
     }
 });
 
