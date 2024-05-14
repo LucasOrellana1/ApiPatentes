@@ -5,7 +5,7 @@ const cheerio = require('cheerio');
 
 async function buscarPatente(searchQuery) {
     // Iniciar una nueva instancia del navegador Chromium
-    const browser = await chromium.launch({ headless: false }); // headless: false para ver la navegación
+    const browser = await chromium.launch({ headless: true }); // headless: false para ver la navegación
 
     try {
         // Crear una nueva página
@@ -53,14 +53,8 @@ async function buscarPatente(searchQuery) {
         console.error('Error al realizar la búsqueda:', error);
     } 
 }
-//buscarPatente('KGYS57')
+
 // MODULOS A
 exports.buscarPatente = buscarPatente;
 
 
-/*
-buscarPatente('KGYS57')
-.then(() => console.log('Búsqueda completada.'))
-.catch((error) => console.error('Error:', error));
-
-*/
