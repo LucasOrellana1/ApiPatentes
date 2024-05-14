@@ -5,7 +5,7 @@ const cheerio = require('cheerio');
 
 async function buscarPatente(searchQuery) {
     // Iniciar una nueva instancia del navegador Chromium
-    const browser = await chromium.launch({ headless: false }); // headless: false para ver la navegación
+    const browser = await chromium.launch({ headless: true }); // headless: false para ver la navegación
 
     try {
         // Crear una nueva página
